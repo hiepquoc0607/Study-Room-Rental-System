@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Introduction01Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:gravity="center"
+        android:text="Quick And Easy to Search"
+        android:textColor="#228AB7"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="375dp"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:text="A quick and easy solution for finding and reserving study spaces. This system simplifies the search for available rooms, making it a breeze for students and professionals to secure ideal spaces for focused learning and work."
+        android:textColor="@color/black"
+        android:textSize="17.5sp"
+        android:textStyle="bold" />
+
+</FrameLayout>
