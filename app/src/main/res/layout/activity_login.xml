@@ -69,48 +69,6 @@
         app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-    <TextView
-        android:id="@+id/txtOr"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="-----OR-----"
-        android:textColor="#959090"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout01"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/custom_backgroud"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="4.5"
-        app:layout_constraintEnd_toEndOf="@+id/txtOr"
-        app:layout_constraintStart_toStartOf="@+id/txtOr"
-        app:layout_constraintTop_toBottomOf="@+id/txtOr">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:src="@drawable/google_logo" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2.5"
-            android:gravity="center|left"
-            android:text="Continue With Google"
-            android:textSize="17.5sp" />
-
-    </LinearLayout>
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="350dp"
