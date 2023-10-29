@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Register02Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="350dp"
