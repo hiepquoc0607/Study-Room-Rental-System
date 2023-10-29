@@ -1,7 +1,9 @@
 package com.example.studyroomrentalsystem;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -33,6 +35,10 @@ public class RenterSystemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_renter_system);
+
+//        Bundle bundle = getIntent().getBundleExtra("Data");
+//        String bearerToken = bundle.getString("bearerToken");
+//        String emailUser = bundle.getString("email");
 
         mapping();
 

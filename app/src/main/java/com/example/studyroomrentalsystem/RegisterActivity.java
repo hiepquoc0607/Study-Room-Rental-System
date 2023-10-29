@@ -54,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                     case 1:
                         replaceFragment(new Register02Fragment());
                         btnRegister.setText("Register");
+
                         break;
                     case 2:
                         loginPage();
