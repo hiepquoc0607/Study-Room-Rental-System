@@ -1,25 +1,32 @@
 package com.example.studyroomrentalsystem;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
-import com.example.studyroomrentalsystem.fragment.Register01Fragment;
-import com.example.studyroomrentalsystem.fragment.Register02Fragment;
-
 public class RegisterActivity extends AppCompatActivity {
+    private EditText etEmail;
+    private EditText etPassword;
+    private EditText etPhone;
+    private EditText etDob;
+    private EditText etGender;
     private Button btnRegister;
     private TextView txtLogin;
-    private int clickCount = 0;
 
     private void mapping() {
+        etEmail = (EditText) findViewById(R.id.etEmail);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        etPhone = (EditText) findViewById(R.id.etPhone);
+        etDob = (EditText) findViewById(R.id.etDob);
+        etGender = (EditText) findViewById(R.id.etGender);
         btnRegister = (Button) findViewById(R.id.btnRegister);
         txtLogin = (TextView) findViewById(R.id.txtLogin);
     }
@@ -44,22 +51,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         mapping();
 
-        replaceFragment(new Register01Fragment());
-
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCount = clickCount+1;
-                switch (clickCount) {
-                    case 1:
-                        replaceFragment(new Register02Fragment());
-                        btnRegister.setText("Register");
-
-                        break;
-                    case 2:
-                        loginPage();
-                        break;
-                }
+                loginPage();
             }
         });
 
