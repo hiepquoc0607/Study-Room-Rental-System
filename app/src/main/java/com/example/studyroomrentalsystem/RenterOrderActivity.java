@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class FavoriteActivity extends AppCompatActivity {
+public class RenterOrderActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
 
     private void mapping() {
@@ -22,14 +22,8 @@ public class FavoriteActivity extends AppCompatActivity {
         finish();
     }
 
-    private void historyPage() {
-        Intent intent = new Intent(this, HistoryOrderActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     private void profilePage() {
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, RenterProfileActivity.class);
         startActivity(intent);
         finish();
     }
@@ -37,7 +31,7 @@ public class FavoriteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_renter_dashboard);
+        setContentView(R.layout.activity_renter_order);
 
         mapping();
 
@@ -47,10 +41,7 @@ public class FavoriteActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.dashboard) {
                     dashboardPage();
                     return true;
-                } else if (item.getItemId() == R.id.favorite) {
-                    return true;
-                } else if (item.getItemId() == R.id.historyOrder) {
-                    historyPage();
+                } else if (item.getItemId() == R.id.order) {
                     return true;
                 } else if (item.getItemId() == R.id.profile) {
                     profilePage();

@@ -27,20 +27,14 @@ public class RenterDashboardActivity extends AppCompatActivity {
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
     }
 
-    private void favoritePage() {
-        Intent intent = new Intent(this, FavoriteActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     private void historyPage() {
-        Intent intent = new Intent(this, HistoryOrderActivity.class);
+        Intent intent = new Intent(this, RenterOrderActivity.class);
         startActivity(intent);
         finish();
     }
 
     private void profilePage() {
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, RenterProfileActivity.class);
         startActivity(intent);
         finish();
     }
@@ -57,10 +51,7 @@ public class RenterDashboardActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 if (item.getItemId() == R.id.dashboard) {
                     return true;
-                } else if (item.getItemId() == R.id.favorite) {
-                    favoritePage();
-                    return true;
-                } else if (item.getItemId() == R.id.historyOrder) {
+                } else if (item.getItemId() == R.id.order) {
                     historyPage();
                     return true;
                 } else if (item.getItemId() == R.id.profile) {

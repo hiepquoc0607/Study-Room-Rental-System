@@ -6,7 +6,7 @@
     android:gravity="center|top"
     android:orientation="vertical"
     android:weightSum="20"
-    tools:context=".RoomDetailActivity">
+    tools:context=".RenterRoomDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,84 +27,29 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="8" />
-
-        <ImageView
-            android:id="@+id/imgFavBorder"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:src="@drawable/favorite_border_ic" />
+            android:layout_weight="9" />
 
     </LinearLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/hsvRoom"
+    <ImageView
+        android:id="@+id/imgRoom"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4">
+        android:layout_weight="5"
+        android:padding="5dp"
+        android:src="@drawable/upload_ic">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+    </ImageView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvFirstItem"
-                android:layout_width="400dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
-
-                <ImageView
-                    android:id="@+id/imgFirstDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/upload_ic" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvSecondItem"
-                android:layout_width="400dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
-
-                <ImageView
-                    android:id="@+id/imgSecondDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/upload_ic" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvThirdItem"
-                android:layout_width="400dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
-
-                <ImageView
-                    android:id="@+id/imgThirdDetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/upload_ic" />
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <TextView
+    <EditText
         android:id="@+id/txtRoomName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:gravity="center|left"
+        android:hint="Room Name"
         android:paddingHorizontal="5dp"
-        android:text="Room Name"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -112,51 +57,53 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75"
-        android:gravity="left|bottom"
+        android:layout_weight="1"
+        android:gravity="left|center"
         android:paddingHorizontal="5dp"
         android:text="Description"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtDesContent"
+    <EditText
+        android:id="@+id/etDesContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="3"
         android:gravity="left|top"
+        android:hint="Description Content Here"
         android:paddingHorizontal="5dp"
-        android:text="Description Content Here"
+        android:text=""
         android:textColor="#808080"
         android:textSize="15sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75"
-        android:gravity="left|bottom"
+        android:layout_weight="1"
+        android:gravity="left|center"
         android:paddingHorizontal="5dp"
         android:text="Service"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtServiceContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="3"
         android:gravity="left|top"
+        android:hint="Service Content Here"
         android:paddingHorizontal="5dp"
-        android:text="Service Content Here"
+        android:text=""
         android:textColor="#808080"
         android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75"
+        android:layout_weight="1.5"
         android:orientation="horizontal"
         android:weightSum="6">
 
@@ -171,25 +118,19 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtRoomAddress"
+        <EditText
+            android:id="@+id/etRoomAddress"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4.95"
             android:gravity="left|center"
+            android:hint="Address Here"
             android:paddingHorizontal="5dp"
-            android:text="123 Street ABC, Ward X, City ABC"
+            android:text=""
             android:textColor="#808080"
             android:textSize="15sp" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imgGoogleMap"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:src="@drawable/upload_ic" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -198,14 +139,15 @@
         android:orientation="horizontal"
         android:weightSum="3">
 
-        <TextView
-            android:id="@+id/txtRoomPrice"
+        <EditText
+            android:id="@+id/etRoomPrice"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center|left"
+            android:hint="Room Price"
             android:paddingHorizontal="5dp"
-            android:text="Room Price"
+            android:text=""
             android:textColor="#228AB7"
             android:textStyle="bold" />
 
@@ -215,16 +157,14 @@
             android:layout_weight="1.25" />
 
         <Button
-            android:id="@+id/btnOrderTransfer"
+            android:id="@+id/btnAdd"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="0.75"
             android:backgroundTint="#228AB7"
-            android:text="Order" />
-
+            android:text="Add" />
 
     </LinearLayout>
-
 
 </LinearLayout>

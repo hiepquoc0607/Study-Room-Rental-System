@@ -20,49 +20,48 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    AccountService accountService;
     private TextView txtRegister;
     private Button btnLogin;
-    AccountService accountService;
     private EditText email, password;
 
     private void mapping() {
+        email = (EditText) findViewById(R.id.etEmail);
+        password = (EditText) findViewById(R.id.etPassword);
         txtRegister = (TextView) findViewById(R.id.txtRegister);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         accountService = AccountRepository.getAccountService();
     }
 
     public void checkLogin() {
-        email = (EditText) findViewById(R.id.etEmail);
-        password = (EditText) findViewById(R.id.etPassword);
         String txtEmail = email.getText().toString();
         String txtPassword = password.getText().toString();
         LoginRequest account = new LoginRequest(txtEmail, txtPassword);
-        accountService.getTokenAuthen(account)
-                .enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(@NonNull Call<LoginResponse> call, @NonNull Response<LoginResponse> response) {
-                        if (response.isSuccessful()) {
-                            LoginResponse loginResponse = response.body();
-                            String bearerToken = loginResponse.getAccessToken();
-                            String emailUser = loginResponse.getEmail();
+        accountService.getTokenAuthen(account).enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<LoginResponse> call, @NonNull Response<LoginResponse> response) {
+                if (response.isSuccessful()) {
+                    LoginResponse loginResponse = response.body();
+                    String bearerToken = loginResponse.getAccessToken();
+                    String emailUser = loginResponse.getEmail();
 
-                            Bundle bundle = new Bundle();
-                            bundle.putString("bearerToken", bearerToken);
-                            bundle.putString("email", emailUser);
-                            Intent intent = new Intent(LoginActivity.this, RenterSystemActivity.class);
-                            intent.putExtra("Data", bundle);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
-                        }
-                    }
+                    Bundle bundle = new Bundle();
+                    bundle.putString("bearerToken", bearerToken);
+                    bundle.putString("email", emailUser);
+                    Intent intent = new Intent(LoginActivity.this, RenterDashboardActivity.class);
+                    intent.putExtra("Data", bundle);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
 
-                    }
-                });
+            }
+        });
 
     }
 
@@ -73,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void landlordSystemPage() {
-        Intent intent = new Intent(this, RenterSystemActivity.class);
+        Intent intent = new Intent(this, RenterDashboardActivity.class);
         startActivity(intent);
         finish();
     }
@@ -82,7 +81,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         mapping();
+
         txtRegister.setOnClickListener(v -> registerPage());
         btnLogin.setOnClickListener(v -> checkLogin());
     }

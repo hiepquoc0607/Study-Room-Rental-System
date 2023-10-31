@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="9"
+            android:layout_weight="8"
             android:gravity="center|left"
             android:paddingHorizontal="10dp"
             android:text="Room List"
@@ -69,6 +69,16 @@
             android:gravity="center"
             android:padding="10dp"
             android:src="@drawable/filter_ic" />
+
+        <ImageView
+            android:id="@+id/imgAdd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/add_ic" />
 
     </LinearLayout>
 
@@ -87,6 +97,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/renter_bottom_nav_menu" />
+        app:menu="@menu/landlord_bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

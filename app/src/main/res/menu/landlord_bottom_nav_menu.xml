@@ -6,6 +6,11 @@
         android:title="" />
 
     <item
+        android:id="@+id/landlord"
+        android:icon="@drawable/landlord_ic"
+        android:title="" />
+
+    <item
         android:id="@+id/order"
         android:icon="@drawable/bag_ic"
         android:title="" />

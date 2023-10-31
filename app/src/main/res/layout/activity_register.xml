@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="325dp"
-        android:layout_height="175dp"
+        android:layout_height="150dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,24 +32,27 @@
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_custom"
         android:drawableLeft="@drawable/email_ic"
         android:hint=" Email"
+        android:inputType="textEmailAddress"
         android:paddingHorizontal="10dp"
         app:layout_constraintEnd_toEndOf="@+id/txtLoginTitle"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtLoginTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtLoginTitle" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_custom"
         android:drawableLeft="@drawable/lock_ic"
         android:hint=" Password"
+        android:inputType="textPassword"
         android:paddingHorizontal="10dp"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
@@ -59,11 +62,12 @@
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_custom"
         android:drawableLeft="@drawable/phone_ic"
         android:hint=" Phone"
+        android:inputType="phone"
         android:paddingHorizontal="10dp"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
@@ -72,34 +76,128 @@
     <EditText
         android:id="@+id/etDob"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_custom"
         android:drawableLeft="@drawable/date_ic"
         android:hint=" Date Of Birth"
+        android:inputType="date"
         android:paddingHorizontal="10dp"
         app:layout_constraintEnd_toEndOf="@+id/etPhone"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etPhone"
         app:layout_constraintTop_toBottomOf="@+id/etPhone" />
 
-    <EditText
-        android:id="@+id/etGender"
+    <LinearLayout
+        android:id="@+id/genderLayout"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_custom"
-        android:drawableLeft="@drawable/gender_ic"
-        android:hint=" Gender"
-        android:paddingHorizontal="10dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
         app:layout_constraintEnd_toEndOf="@+id/etDob"
         app:layout_constraintStart_toStartOf="@+id/etDob"
-        app:layout_constraintTop_toBottomOf="@+id/etDob" />
+        app:layout_constraintTop_toBottomOf="@+id/etDob">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:padding="5dp"
+            android:src="@drawable/gender_ic" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center|left"
+            android:text="Gender"
+            android:textColor="#808080"
+            android:textSize="17.5sp" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|right">
+
+                <AutoCompleteTextView
+                    android:id="@+id/txtAutoGender"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|right"
+                    android:inputType="none"
+                    android:padding="0dp"
+                    android:textSize="15dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        app:layout_constraintEnd_toEndOf="@+id/genderLayout"
+        app:layout_constraintStart_toStartOf="@+id/genderLayout"
+        app:layout_constraintTop_toBottomOf="@+id/genderLayout">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:padding="5dp"
+            android:src="@drawable/role_ic" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center|left"
+            android:text="Role"
+            android:textColor="#808080"
+            android:textSize="17.5sp" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|right">
+
+                <AutoCompleteTextView
+                    android:id="@+id/txtAutoRole"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|right"
+                    android:inputType="none"
+                    android:padding="0dp"
+                    android:textSize="15dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="#228AB7"
         android:text="Register"
         android:textSize="20sp"

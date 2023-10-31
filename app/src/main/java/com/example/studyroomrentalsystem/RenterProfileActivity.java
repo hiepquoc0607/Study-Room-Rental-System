@@ -9,15 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class HistoryOrderActivity extends AppCompatActivity {
+public class RenterProfileActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
 
     private void mapping() {
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
     }
 
-    private void favoritePage() {
-        Intent intent = new Intent(this, FavoriteActivity.class);
+    private void historyPage() {
+        Intent intent = new Intent(this, RenterOrderActivity.class);
         startActivity(intent);
         finish();
     }
@@ -28,16 +28,10 @@ public class HistoryOrderActivity extends AppCompatActivity {
         finish();
     }
 
-    private void profilePage() {
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_renter_dashboard);
+        setContentView(R.layout.activity_order_process);
 
         mapping();
 
@@ -47,13 +41,10 @@ public class HistoryOrderActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.dashboard) {
                     dashboardPage();
                     return true;
-                } else if (item.getItemId() == R.id.favorite) {
-                    favoritePage();
-                    return true;
-                } else if (item.getItemId() == R.id.historyOrder) {
+                } else if (item.getItemId() == R.id.order) {
+                    historyPage();
                     return true;
                 } else if (item.getItemId() == R.id.profile) {
-                    profilePage();
                     return true;
                 }
                 return false;
